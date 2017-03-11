@@ -3,9 +3,13 @@ VHDL design for rotary encoder. Can be used accessed via digital signals or AXI 
 
 ##Hardware
 The rotary encoder for this project was purchased here:
+
 https://www.aliexpress.com/item/Rotary-Encoder-Module-Brick-Sensor-Development-Board-For-Arduino/1893663630.html
+
 Model: KY-40, it says Keyes on the board
 It can be powered from 5V or from 3.3V supply.
+
+For the design the Digilent Zybo VHDL board was used. The encoder board fits directly into the PMOD for first fast tests.
 
 ##Operation
 The inputs from the encoder are debounced using debouncer with time setting of about 300 us. This was experimentally set as a good value when you use the encoder for hand-turning for controlling anything the logic. This time is depended on the main clock. The clock for this project was used 100 MHz. The time can be calculated by the equation:
