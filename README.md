@@ -40,6 +40,6 @@ bit|31-6|5|4|3|2|1|0
 ##Sources
 Design is based on code from these pages:
 
-https://eewiki.net/pages/viewpage.action?pageId=4980758
-http://dew.ninja/vhdl-code-for-quadrature-encoder-receiver-module/
+* https://eewiki.net/pages/viewpage.action?pageId=4980758
+* http://dew.ninja/vhdl-code-for-quadrature-encoder-receiver-module/
 
