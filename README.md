@@ -21,8 +21,25 @@ UD_out(1) .. up-down out will generate one-clock-wide pulse when encoder is turn
 
 UD_latching works in similar manner, but pulse latches and stays at the changed state. For example: encoder is turned right one step, signal UD_latching changes from 00 to 01 and stays in this state until pulse on the input clear_latch is present. Then it resets back to 00. This funtionality is used for AXI interface, when latch is cleared when register is read from the processor (clear on read).
 
+##Usage
+Design can be used as only in VHDL project (no need to include my_rotary_encoder... files). Or it can be used with AXI interface for the processor.
+
+##AXI register
+register is at base address of the AXI
+
+bit|31-6|5|4|3|2|1|0
+---|---|---|---|---|---|---|---
+||X|U|D|X|X|X|SW
+
+* X not used bits
+* U	latching output from rotation of encoder to one side
+* D	latching output from rotation of encoder to the other side
+* SW	latching output of switch rising edge. When sw is pressed this stays H till read. 
+*	the register clears on read
+
 ##Sources
 Design is based on code from these pages:
+
 https://eewiki.net/pages/viewpage.action?pageId=4980758
 http://dew.ninja/vhdl-code-for-quadrature-encoder-receiver-module/
 
